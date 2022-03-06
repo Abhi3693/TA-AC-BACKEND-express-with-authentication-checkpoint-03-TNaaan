@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+  <section>
+    <div class="container align-center">
+      <div>
+        <form class="form-control" action="/verifyEmail" method="POST">
+          <div class="form-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMdA4uLYPkH6uN5YyCTW-tgD32dUq-e972wA&usqp=CAU" alt="">
+          </div>
+          <h3>Varify Your Email</h3>
+          <% if(error) { %>
+            <p class="err-msg"><%=error%></p>
+          <% } %>
+          <input
+            type="email"
+            required
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="enter your email"
+          />
+          <button type="submit" class="btn ">Verify</button>
+        </form>
+      </div>
+    </div>
+  </section>
+<%- include('partials/footer') %>

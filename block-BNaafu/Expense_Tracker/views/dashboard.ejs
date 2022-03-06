@@ -1,0 +1,16 @@
+<%- include('partials/header') -%>
+<section>
+  <div class="container">
+    <% if (user) { %>
+      <h1 class="center">Welcome <%= user.name %></h1>
+      <div class="dashboard-box center">
+        <a href="/income/new">Add Income</a>
+        <a href="/expense/new">Add Expense</a>
+        <a href="/users/statementList">View All Records</a>
+      </div>
+      <% } %> <% if (!user) { %>
+      <h1>Please Login</h1>
+      <% } %>
+  </div>
+</section>
+<%- include('partials/footer') -%>

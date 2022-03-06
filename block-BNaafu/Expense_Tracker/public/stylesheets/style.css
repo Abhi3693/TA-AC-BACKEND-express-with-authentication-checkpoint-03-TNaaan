@@ -1,0 +1,229 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Mukta Malar', sans-serif;
+
+}
+a {
+  color: rgb(36, 126, 211);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.center{
+  text-align: center;
+}
+.flex{
+  display: flex;
+}
+.align-center{
+  align-items: center;
+}
+.space-btn{
+  justify-content: space-between;
+}
+.user-img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.logo{
+  font-size: 40px;
+}
+.header {
+  border: 1px solid black;
+  padding: 1rem 2rem;
+  background-color: rgb(71, 71, 71);
+}
+.header a{
+  color: white;
+}
+.gap{
+  gap: 2rem;
+}
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+h1{
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+h2{
+  font-size: 1.7rem;
+  font-weight:600 ;
+}
+h3{
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+h4{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+p{
+  font-size: 1rem;
+  font-weight: 500;
+}
+.btn{
+  background-color: rgb(49, 129, 49);
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: none;
+  color: aliceblue;
+  margin: 1rem;
+  display: inline-block;
+}
+.btn:hover{
+  background-color: rgb(227, 227, 227);
+  color: black;
+}
+.btn a{
+  color: white;
+}
+.logout{
+  background-color: tomato;
+}
+.dashboard-box{
+  display: flex;
+  flex-direction:column ;
+  gap: 2rem;
+}
+.btn-holder a{
+  background-color: turquoise;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  margin-right: 2rem;
+  color: rgb(255, 0, 221);
+}
+.col input, select{
+  margin-right: 2rem;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 1.5rem;
+}
+.col .btn {
+  padding: 0.7rem;
+}
+.empty{
+  height: 0.5rem;
+  background-color: lightgray;
+  margin: 3rem 0;
+}
+table{
+  margin-top: 2rem;
+}
+th{
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: rgb(91, 91, 91);
+}
+td{
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(125, 125, 125);
+  border-bottom: 1px solid lightgrey;
+}
+.err-msg{
+  color: red;
+}
+
+.form-control{
+  width: 40%;
+  border: 1px solid rgb(186, 185, 185);
+  padding: 2rem;
+  margin: 5rem auto;
+  border-radius: 10px;
+}
+.form-control input {
+  width: 90%;
+  display: inline-block;
+  margin: 1rem 0 ;
+  padding: 5px;
+  font-size: 1rem;
+}
+.form-control button {
+  display: block;
+  align-items: center;
+  font-size: 1rem;
+  width: 20%;
+  margin: 0 auto;
+}
+
+form h3{
+  text-align: center;
+}
+.signin{
+  margin-top: 3rem;
+  display: block;
+  width: 20%;
+  margin: 2rem auto;
+}
+.signin span, img{
+  display: block;
+}
+.signin span{
+  margin-left: 5rem;
+}
+.github span{
+  color: black;
+}
+.form-img{
+  display: flex;
+  justify-content: center;
+}

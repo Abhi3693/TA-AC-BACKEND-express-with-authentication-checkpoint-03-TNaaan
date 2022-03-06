@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+<main>
+  <section class="forgot-sec">
+    <div class="container">
+      <div>
+        <div>
+          <form class="form-control" action="/verifyEmail/<%= id %>/verifyOtp" method="POST">
+            <div class="form-img">
+              <img src="data:image/png;base64,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" alt="">
+            </div>
+            <h3>
+              Check your email we have sent OTP for email verification 
+            </h3>
+            <% if (error) { %>
+            <p class="err-msg"><%= error %></p>
+            <% } %>
+            <input type="email" name="email" value="<%= content.email %>" />
+            <input
+              type="password"
+              required
+              id="email"
+              name="otp"
+              placeholder="Enter OTP"
+            />
+            <button class="btn" type="submit">Verify OTP</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>
+

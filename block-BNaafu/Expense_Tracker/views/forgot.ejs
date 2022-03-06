@@ -1,0 +1,24 @@
+<% include partials/header %>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="login-box">
+        <form class="form-control" action="/verifyEmail/forgot" class="form" method="POST">
+          <h3>Verify your email</h3>
+          <input
+            type="email"
+            required
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="enter your email"
+          />
+          <button class="btn" type="submit">verify</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<% include partials/footer %>

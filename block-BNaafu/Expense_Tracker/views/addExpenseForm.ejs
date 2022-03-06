@@ -1,0 +1,13 @@
+<%- include('partials/header.ejs') %>
+<section>
+  <div class="container">
+    <form class="form-control" action="/expense/new" method="post">
+        <h2>Expense Info</h2>
+        <input type="text" name="expenseCategory" placeholder="Enter Category of Expense">
+        <input type="number" name="expenseAmount" placeholder="Enter Amount of Expense">
+        <input type="date" name="expenseDate">
+      <input class="btn add-data" type="submit" value="Add Data">
+    </form>
+  </div>
+</section>
+<%- include('partials/footer') -%>
