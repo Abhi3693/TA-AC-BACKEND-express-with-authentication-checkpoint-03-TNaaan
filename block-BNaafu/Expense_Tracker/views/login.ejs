@@ -1,0 +1,17 @@
+<%- include('partials/header.ejs') %>
+  <div class="container">
+    
+    <form class="form-control" action="/users/login" method="post">
+      <div class="form-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuGibhFK9UY4E9Qh5QBDJPx3mME8xI9UCPcg&usqp=CAU" alt="">
+      </div>
+      <% if(error) { %> 
+        <p class="err-msg"><%=error%></p>
+      <% } %>
+      <input type="text" name="email" placeholder="Enter Your email">
+      <input type="password" name="password" placeholder="Enter Your password">
+      <div><span class="reset-password"><a href="/verifyEmail/forgot">Forgot password</a></span></div>
+      <input class="btn" type="submit" value="Login User">
+    </form>
+  </div>
+<%- include('partials/footer') -%>

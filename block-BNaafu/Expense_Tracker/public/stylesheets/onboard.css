@@ -1,0 +1,18 @@
+.income, .expense{
+  padding: 20px;
+  margin-bottom: 50px;
+}
+.income input, .expense input{
+  width: 60%;
+  display: block;
+  padding:5px ;
+  margin-top: 20px;
+  font-size: 18px;
+}
+.add-data{
+  margin-left: 20px;
+  background-color: lightblue ;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+}

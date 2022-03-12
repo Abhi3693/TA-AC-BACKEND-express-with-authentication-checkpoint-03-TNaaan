@@ -1,0 +1,91 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <section>
+    <h1>
+      Saving for the month of <%=currentMonth%> :
+      <span><%=savings%></span>
+    </h1>
+  </section>
+  <section>
+    <div class="col col-1">
+      <div class="empty"></div>
+      <div class="flex space-btn">
+        <form action="" method="GET">
+          <h2>Filter by Date and Category</h2>
+          <input type="date" name="firstDate" />
+          <input type="date" name="endDate" />
+          <input
+            type="text"
+            name="incomeSource"
+            placeholder="Enter income Source"
+          />
+          <input
+            type="text"
+            name="expenseCategory"
+            placeholder="Enter Expense Category"
+          />
+          <input class="btn" type="submit" value="Search" />
+        </form>
+        <form action="" method="GET">
+          <h2>Filter by Month</h2>
+          <input type="month" name="month" id="month"></input>
+          <input class="btn" type="submit" value="Search" />
+        </form>
+      </div>
+      <div class="empty"></div>
+    </div>
+    <div class="col clo-2">
+      <% if(balance) {%>
+      <h2>Savings of this particular Search: <span> <%=balance%> </span></h2>
+      <% } %> <% if(incomes.length) { %>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Income Source</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <% incomes.forEach((e, i)=>{ %>
+          <tbody>
+            <tr>
+              <td><%= i+1 %></td>
+              <td><%=e.incomeSource%></td>
+              <td><%=e.incomeAmount%></td>
+            </tr>
+          </tbody>
+          <% }) %>
+        </table>
+      </div>
+      <% } %> <% if(expenses.length) { %>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Expense Category</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <% expenses.forEach((e, i)=>{ %>
+          <tbody>
+            <tr>
+              <td><%= i+1 %></td>
+              <td><%=e.expenseCategory%></td>
+              <td><%=e.expenseAmount%></td>
+            </tr>
+          </tbody>
+          <% }) %>
+        </table>
+      </div>
+      <% } %>
+    </div>
+    <% if(expenses.length === 0 && incomes.length === 0) { %>
+    <h1>No Records Available</h1>
+    <% } %>
+  </section>
+</div>
+
+<%- include('partials/footer') %>)

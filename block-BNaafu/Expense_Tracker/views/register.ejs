@@ -1,0 +1,22 @@
+
+<%- include('partials/header.ejs') %>.
+  <div class="container">
+    <form class="form-control" action="/users/new" method="post">
+      <div class="form-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdOOq3Qv4yCa2XFXzWuyX_DR6oqMyt3OrU6A&usqp=CAU" alt="">
+      </div>
+      <h1>Register User</h1>
+      <% if(error) { %>
+        <p class="err-msg"><%=error%></p>
+      <% } %>
+      <input type="text" name="name" placeholder="Enter Your Name">
+      <input type="text" name="email" value="<%=content.email%>" placeholder="Enter Your email">
+      <input type="number" name="age" placeholder="Enter Your age">
+      <input type="number" name="phone" placeholder="Enter Your phone no.">
+      <input type="text" name="country" placeholder="Enter Your Country">
+      <input type="text" name="image" placeholder="Enter Your image-address">
+      <input type="password" name="password" placeholder="Enter Your password">
+      <input class="btn" type="submit" value="Register User">
+    </form>
+  </div>
+<%- include('partials/footer') -%>
