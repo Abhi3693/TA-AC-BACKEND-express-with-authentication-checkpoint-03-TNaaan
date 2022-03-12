@@ -1,113 +1,89 @@
 <%- include('partials/header') %>
 
-
 <div class="container">
-  <div>
-    <a class="btn" href="/income/new">Add income</a>
-    <a class="btn" href="/expense/new">Add expense</a>
-  </div>
   <section>
-      <h1>Saving for the month of <%=currentMonth%> :
+    <h1>
+      Saving for the month of <%=currentMonth%> :
       <span><%=savings%></span>
-      </h1>
+    </h1>
   </section>
   <section>
     <div class="col col-1">
       <div class="empty"></div>
       <div class="flex space-btn">
-        <form action="/users/statementlist/filterByDate" method="post">
-          <h2>Filter by Date</h2>
-          <input type="date" name="startDate" />
+        <form action="" method="GET">
+          <h2>Filter by Date and Category</h2>
+          <input type="date" name="firstDate" />
           <input type="date" name="endDate" />
+          <input
+            type="text"
+            name="incomeSource"
+            placeholder="Enter income Source"
+          />
+          <input
+            type="text"
+            name="expenseCategory"
+            placeholder="Enter Expense Category"
+          />
           <input class="btn" type="submit" value="Search" />
         </form>
-        <form action="/users/statementlist/filterByMonth" method="post">
+        <form action="" method="GET">
           <h2>Filter by Month</h2>
-          <select name="month" id="month">
-            <option value="01">January</option>
-            <option value="02">February</option>
-            <option value="03">March</option>
-            <option value="04">April</option>
-            <option value="05">May</option>
-            <option value="06">June</option>
-            <option value="07">July</option>
-            <option value="08">August</option>
-            <option value="09">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-            <input class="btn" type="submit" value="Search" />
-          </select>
+          <input type="month" name="month" id="month"></input>
+          <input class="btn" type="submit" value="Search" />
         </form>
       </div>
-      <div class="empty"></div>
-      <form action="/users/statementlist/filterByDateAndCategory" method="post">
-        <h2>Filter by Date and Category</h2>
-        <input type="date" name="startDate" />
-        <input type="date" name="endDate" />
-        <input type="text" name="incomeSource" placeholder="Enter income Source">
-        <input type="text" name="expenseCategory" placeholder="Enter Expense Category">
-        <input class="btn" type="submit" value="Search" />
-      </form>
       <div class="empty"></div>
     </div>
     <div class="col clo-2">
       <% if(balance) {%>
-        <h2>
-          Savings of this particular Search: <span> <%=balance%> </span>
-        </h2>
+      <h2>Savings of this particular Search: <span> <%=balance%> </span></h2>
+      <% } %> <% if(incomes.length) { %>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Income Source</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <% incomes.forEach((e, i)=>{ %>
+          <tbody>
+            <tr>
+              <td><%= i+1 %></td>
+              <td><%=e.incomeSource%></td>
+              <td><%=e.incomeAmount%></td>
+            </tr>
+          </tbody>
+          <% }) %>
+        </table>
+      </div>
+      <% } %> <% if(expenses.length) { %>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Expense Category</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <% expenses.forEach((e, i)=>{ %>
+          <tbody>
+            <tr>
+              <td><%= i+1 %></td>
+              <td><%=e.expenseCategory%></td>
+              <td><%=e.expenseAmount%></td>
+            </tr>
+          </tbody>
+          <% }) %>
+        </table>
+      </div>
       <% } %>
-      <% if(incomes.length) { %>
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th></th>
-                <th>Income Source</th>
-                <th>Amount</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <% incomes.forEach((e, i)=>{ %>
-              <tbody>
-                <tr>
-                  <td><%= i+1 %></td>
-                  <td><%=e.incomeSource%></td>
-                  <td><%=e.incomeAmount%></td>
-                  <td><a href="/income/<%=e.id%>">Show Details</a></td>
-                </tr>
-              </tbody>
-            <% }) %>
-          </table>
-        </div>
-      <% } %>
-      <%  if(expenses.length) { %>
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th></th>
-                <th>Expense Category</th>
-                <th>Amount</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <% expenses.forEach((e, i)=>{ %>
-              <tbody>
-                <tr>
-                  <td><%= i+1 %></td>
-                  <td><%=e.expenseCategory%></td>
-                  <td><%=e.expenseAmount%></td>
-                  <td><a href="/expense/<%=e.id%>">Show Details</a></td>
-                </tr>
-              </tbody>
-            <% }) %>
-          </table>
-        </div>
-      <% } %> 
     </div>
-    <% if(expenses.length === 0  && incomes.length === 0) { %>
-      <h1>No Records Available</h1>
+    <% if(expenses.length === 0 && incomes.length === 0) { %>
+    <h1>No Records Available</h1>
     <% } %>
   </section>
 </div>
